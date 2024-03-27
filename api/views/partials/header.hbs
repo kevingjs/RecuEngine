@@ -1,0 +1,15 @@
+<header>
+	<a class="docTitle" href="/inicio">
+		Recu<span>Engine</span>
+	</a>
+	<div id="loggedUser" class="user">
+		<div class="userMenu">
+			{{#if teacher}}
+				<span class="userMenuSpan" id="report">Reporte {{> ring}}</span>
+			{{/if}}
+			
+			<a class="userMenuSpan" href="/salir">Salir</a>
+		</div>
+		<span>{{user.firstname}} {{user.lastname}}</span>
+	</div>
+</header>

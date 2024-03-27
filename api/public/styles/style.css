@@ -1,0 +1,1986 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+	/* === RecuEngine Colors === */
+	--primary-color: #24ee71;
+	--primary-color-translucent: #24ee719a;
+
+	/* === BODY === */
+	--body-background-color: #090c0f;
+	--body-color: #1f2630;
+
+	/* === Header === */
+	--header-background-color: #1f2630;
+	--header-color: #e1e1e1;
+
+    /* === LOGIN === */
+	--login-background-color: #1f2630;
+	--login-input-background-color: #090c0f;
+    --login-input-color: #252c36;
+    --login-input-placeholder-color: #1f263075;
+    --login-input-focusVisible-color: #e1e1e1;
+
+	/* === Register === */
+	--navbar-color: #090c0fa6;
+    --navbar-active-color: #24ee71;
+    --navbar-filled-color: #24ee712d;
+    --navbar-filledHover-color: #24ee7157;
+    --navbar-next-color: #24ee719a;
+    
+    /* === ALERT BOX === */
+    --alert-color: var(--primary-color);
+    --alertSuccess-background-color: var(--body-color);
+
+    --alertError-background-color: var(--body-color);
+    --alertError-color: #e11900;
+
+    /* === Color Classes === */
+    --EDNddrdRnO: #e11900;
+    --dWRAwWrYAr: #ff3e82;
+    --RaDdAAzLAz: #ff3ee4;
+    --cIiLIECLii: #7e00bf;
+    --uAHNELuHnp: #443eff;
+    --duEZEURZrr: #027aff;
+    --cPfPABCPLb: #0eb1c5;
+    --oUFoGUErUe: #24ee71;
+    --u1458OOL1w: #e1d51b;
+    --UfVL6sSUuF: #e18100;
+}
+
+/* === CONSTANTS === */
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+*:link, *:visited {
+    color: inherit;
+}
+
+*::-webkit-scrollbar {
+	/* height: 100%; */
+    width: 8px;
+    background-color: unset;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: var(--body-color);
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+	appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.disabled {
+    cursor: not-allowed;
+}
+
+input, .button {
+    width: 100%;
+    padding: 25px 20px 15px;
+    border: 2px solid #0000;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: var(--login-input-background-color);
+    color: var(--login-input-color);
+    transition: all .2s;
+}
+
+.EDNddrdRnO {
+	color: var(--EDNddrdRnO);
+}
+
+.dWRAwWrYAr {
+	color: var(--dWRAwWrYAr);
+}
+
+.RaDdAAzLAz {
+	color: var(--RaDdAAzLAz);
+}
+
+.cIiLIECLii {
+	color: var(--cIiLIECLii);
+}
+
+.uAHNELuHnp {
+	color: var(--uAHNELuHnp);
+}
+
+.duEZEURZrr {
+	color: var(--duEZEURZrr);
+}
+
+.cPfPABCPLb {
+	color: var(--cPfPABCPLb);
+}
+
+.oUFoGUErUe {
+	color: var(--oUFoGUErUe);
+}
+
+.u1458OOL1w {
+	color: var(--u1458OOL1w);
+}
+
+.UfVL6sSUuF {
+	color: var(--UfVL6sSUuF);
+}
+
+svg {
+	fill: currentColor;
+}
+
+.has__tooltip {
+	position: relative;
+}
+
+.has__tooltip:hover > .tooltip {
+	opacity: 1;
+}
+
+.tooltip {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 150%;
+    left: 70%;
+    padding: .5em;
+    width: max-content;
+    font-size: .8em;
+    font-family: 'Roboto';
+    border-radius: 5px;
+    color: var(--header-color);
+    background-color: var(--body-color);
+    box-shadow: 0 0 5px #0000009e;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity .2s;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 15px;
+    color: var(--body-color);
+    width: 10em;
+    background-color: var(--primary-color);
+    margin: 0;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.button.next {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.button.submit {
+    cursor: pointer;
+    opacity: 1;
+}
+
+input::placeholder {
+    color: var(--login-input-placeholder-color);
+}
+
+input:focus-visible {
+    outline: none;
+    border-color: var(--primary-color);
+    color: var(--login-input-focusVisible-color);
+    transition: all 0.3s;
+}
+
+div:not(.main_cover).show {
+    box-shadow: 0 0 11px #0000007a;
+}
+
+.labelForm {
+    font-size: 1.8em;
+    font-weight: 900;
+}
+
+/* /// CONSTANTS END \\\ */
+
+body {
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 1px;
+	background-color: var(--body-background-color);
+	color: #1f2630;
+	width: 100vw;
+    height: 100vh;
+	overflow: hidden;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1em 1.5em;
+	width: 100%;
+	height: 70px;
+	color: var(--header-color);
+	background-color: var(--header-background-color);
+}
+
+header > .docTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	font-size: 1.5em;
+	font-weight: 900;
+}
+
+header > .docTitle > span {
+	color: var(--primary-color);
+}
+
+header > .docTitle > .headerTitle {
+    margin-left: 0.5em;
+    font-size: 16px;
+}
+
+header > .user {
+    position: relative;
+    height: 100%;
+}
+
+header > .user > .userMenu {
+    display: flex;
+    flex-direction: column;
+    min-width: 166.45px;
+    max-width: 166.45px;
+    position: absolute;
+    right: 0;
+    cursor: default;
+    padding: 0.4em;
+    gap: 0.4em;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 3px 3px 0 0;
+    background-color: var(--header-background-color);
+    z-index: -2;
+    opacity: 0;
+    transform: translateY(35px);
+    transition: z-index 0s,opacity .1s,transform .2s;
+}
+
+header > .user > .userMenu.show {
+    z-index: 1000;
+    opacity: 1;
+    transform: translateY(45px);
+}
+
+/* header > .user > .userMenu > div {
+
+} */
+
+header > .user > .userMenu > .userMenuSpan {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0.7em .9em;
+    border-radius: 10px;
+    transition: background-color .1s;
+    cursor: pointer;
+}
+
+header > .user > .userMenu > .userMenuSpan:hover {
+    background-color: #2a3442;
+}
+
+header > .user > .userMenu > .userMenuSpan.loading {
+	cursor: not-allowed;
+}
+
+header > .user > .userMenu > .userMenuSpan.loading > svg {
+	display: block;
+}
+
+header > .user > .userMenu.show ~ span {
+    background-color: #2a3442;
+}
+
+header > .user > .userMenu.show:hover ~ span::before {
+    height: 100%;
+    transition: height .2s cubic-bezier(0.25, 0.71, 0.29, 0.99);
+}
+
+header > .user > .userMenu.show:hover ~ span {
+    color: var(--body-background-color);
+    transition: background-color .2s, color 0.2s 0s;
+}
+
+header > .user > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    min-width: 160px;
+    height: 100%;
+    padding: 0 1em;
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color .2s, color 0.2s 0.1s;
+}
+
+header > .user > span:hover {
+    background-color: #2a3442;
+}
+
+header > .user > span::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    z-index: -1;
+    background-color: var(--primary-color);
+    transition: height .2s cubic-bezier(.6, 0, 1, 1);
+}
+
+header.index > a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 0 .8em;
+	border-radius: 15px;
+	color: var(--body-color);
+	background-color: var(--primary-color-translucent);
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+header.index > a:hover, header.index > a:hover:active {
+	background-color: var(--primary-color);
+}
+
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	height: calc(100% - 140px);
+}
+
+main > .background {
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+}
+
+main > .title {
+	color: #e1e1e1;
+	font-size: 8em;
+	font-weight: 900;
+}
+
+main > .title > span {
+	color: var(--primary-color);
+}
+
+/* LOGIN SCREEN */
+
+.loginchild {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: center;
+}
+
+.loginchild__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: space-around;
+    width: 500px;
+	height: 450px;
+    border-radius: 25px;
+    background-color: var(--login-background-color);
+    padding: 2em 1em;
+}
+
+.loginchild__form > h3 {
+	color: var(--primary-color);
+    font-size: 2.1em;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+.loginchild__form > .inputSignIn__Wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+
+.loginchild input, .loginchild .button {
+    border: 2px solid #0000;
+    border-radius: 10px;
+    background-color: var(--login-input-background-color);
+    color: var(--login-input-color);
+    margin-bottom: 18.2px;
+    width: 100%;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 15px 25px;
+    transition: all .2s;
+}
+
+input:not(:placeholder-shown):focus-visible:valid {
+    border-color: var(--primary-color);
+}
+
+input:not(:placeholder-shown):focus-visible:invalid {
+    border-color: #ff3f3f;
+}
+
+.loginchild .button {
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 15px;
+    color: var(--body-color);
+    width: 10em;
+    background-color: var(--primary-color);
+    margin: 0;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.loginchild .button.next {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.loginchild .button.submit {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.loginchild input::placeholder {
+    color: var(--login-input-placeholder-color);
+}
+
+.loginchild input:focus-visible {
+    outline: none;
+    border-color: var(--primary-color);
+    color: var(--login-input-focusVisible-color);
+    transition: all 0.3s;
+}
+
+.loginchild .signin__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginchild .authBtns {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.loginchild .authBtns.center {
+    margin: auto;
+    margin-top: 1em;
+
+}.loginchild .authBtns.center.mb {
+    margin-bottom: 1em;
+}
+
+.loginchild .authBtns a {
+    padding: 0.2em 0 .2em .5em;
+    font-size: .9em;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.loginchild .authBtns a:not(:last-child) {
+    margin-bottom: .2em;
+}
+
+/* /// LOGIN SCREEN END \\\ */
+
+/* REGISTER SITE */
+
+.register {
+    display: flex;
+    justify-content: center;
+    letter-spacing: 1px;
+}
+
+.loginchild .CI__input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 18.2px;
+    width: 100%;
+} 
+
+.loginchild .CI__input input {
+    margin: 0;
+    padding-left: 45px;
+}
+
+.loginchild .CI__input input:placeholder-shown ~ span {
+    color: var(--login-input-placeholder-color);
+}
+
+.loginchild .CI__input input:focus-visible ~ span {
+    color: var(--login-input-focusVisible-color);
+}
+
+.loginchild .CI__input span {
+    color: var(--login-input-color);
+    font-size: 16px;
+    position: absolute;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: all .2s;
+    padding-left: 25px;
+}
+
+.register > .loginchild > .loginchild__form {
+	position: relative;
+}
+
+.loginchild__form > .formViews {
+    display: flex;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.loginchild__form > .formViews > div {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    z-index: 1;
+    transition: 0.4s;
+}
+
+.loginchild__form > .formViews > div:not(.form1) {
+    transform: scale(0.8);
+}
+
+.loginchild__form > .formViews > div > .labelForm {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+	color: var(--primary-color);
+    transition: color 0.2s;
+}
+
+.loginchild__form > .formViews > div > .inputWrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loginchild__form > .formViews > div > .inputWrapper :last-child {
+    margin-bottom: 0;
+}
+
+.loginchild__form > .formViews > div > .inputWrapper .invalid {
+    border-color: #ff3f3f;
+}
+
+.loginchild__form > .formViews > div.form1 > .labelForm.invalid {
+    color: #ff3f3f;
+}
+
+.loginchild__form > .formViews > div.form1 > .inputWrapper {
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.loginchild__form > .formViews > div.form1 > .inputWrapper > .type {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	opacity: 0.5;
+	transition: all 0.2s;
+}
+
+.loginchild__form > .formViews > div.form1 > .inputWrapper > .type:hover, .loginchild__form > .formViews > div.form1 > .inputWrapper > .type:active {
+	opacity: 1;
+}
+
+.loginchild__form > .formViews > div.form1 > .inputWrapper > .type.active {
+    opacity: 1;
+}
+
+.loginchild__form > .formViews > div.form1 > .inputWrapper > .type > svg {
+	height: 100px;
+	fill: var(--primary-color);
+	margin-bottom: 1em;
+}
+
+.loginchild__form > .formViews > div.form1 > .inputWrapper > .type > span {
+	color: var(--header-color);
+	font-weight: 900;
+	font-size: 1.5em;
+}
+
+.loginchild__form > .formViews > div.hidden {
+    opacity: 0;
+    z-index: 0;
+    transition: z-index 0s 0s, opacity 0.3s 0s, transform 0.35s;
+}
+
+.loginchild__form > .formViews > div.left {
+    transform: translateX(-101%);
+    transition: transform 0.35s cubic-bezier(1, 0, 1, 0.15), z-index 0s 0s, opacity 0.35s 0s;
+}
+
+.loginchild__form > .formViews > div.show {
+    transform: scale(1);
+}
+
+.loginchild__form > .formViews > div.show.left {
+    transform: scale(1) translateX(-101%);
+    transition: transform 0.35s cubic-bezier(1, 0, 1, 0.15), z-index 0s 0s, opacity 0.35s 0s;
+}
+
+.loginchild__form > .form__navbar {
+    display: flex;
+    position: absolute;
+    top: 4%;
+    height: 3px;
+    width: max-content;
+}
+
+.loginchild__form > .form__navbar > .navbar {
+    width: 20px;
+    height: 100%;
+    background-color: var(--navbar-color);
+}
+
+.loginchild__form > .form__navbar > .navbar.filled {
+    cursor: pointer;
+    background-color: var(--navbar-filled-color);
+}
+
+.loginchild__form > .form__navbar > .navbar.filled:hover {
+    background-color: var(--navbar-filledHover-color);
+}
+
+.loginchild__form > .form__navbar > .navbar:not(:last-child) {
+    margin-right: 2px;
+}
+
+.loginchild__form > .form__navbar > .navbar.active {
+    background-color: var(--primary-color);
+}
+
+.loginchild__form > .form__navbar > .navbar.next {
+    cursor: pointer;
+}
+
+.loginchild__form > .form__navbar > .navbar.next:hover {
+    background-color: var(--navbar-next-color);
+}
+
+/* /// REGISTER SITE END \\\ */
+
+/* === AlertBox === */
+
+.alertBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 15vh;
+    right: 5vw;
+    height: 60px;
+    width: max-content;
+    border-radius: 0.5em;
+    overflow: hidden;
+    z-index: 96;
+    background-color: var(--alertSuccess-background-color);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.alertBox.error {
+    background-color: var(--alertError-background-color);
+}
+
+.alertBox.show {
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.alertBox > .alertBox__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.alertBox > .alertBox__container > .alertBox__container--close {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 15px;
+    width: 15px;
+    fill: var(--alert-color);
+}
+
+.alertBox.error > .alertBox__container > .alertBox__container--close {
+    fill: var(--alertError-color);
+}
+
+.alertBox > .alertBox__container > .alertBox__container--message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 1.4em 0 1.2em;
+}
+
+.alertBox > .alertBox__container > .alertBox__container--message > svg {
+    height: 20px;
+    margin-right: 0.5em;
+    fill: var(--alert-color);
+}
+
+.alertBox.error > .alertBox__container > .alertBox__container--message > svg {
+    height: 20px;
+    margin-right: 0.5em;
+    fill: var(--alertError-color);
+}
+
+.alertBox > .alertBox__container > .alertBox__container--message {
+    color: var(--alert-color);
+    font-weight: 500;
+}
+
+.alertBox.error > .alertBox__container > .alertBox__container--message {
+    color: var(--alertError-color);
+}
+
+.alertBox > .alertBox__container > .alertBox__container--timeoutBar {
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    width: 100%;
+    background-color: #00000052;
+    transform: translateX(0);
+    transition: transform 0s 0.3s;
+}
+
+.alertBox.show > .alertBox__container > .alertBox__container--timeoutBar {
+    transform: translateX(-100%);
+    transition: transform 7s cubic-bezier(0, 0, 0, 0);
+}
+
+/* /// AlertBox END \\\ */
+
+/* === TEACHER UI === */
+main.engine {
+    display: flex;
+    height: calc(100% - 70px);
+    padding: 1.5em;
+}
+
+main > div.main_cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+main > div.main_cover.show {
+    z-index: 998;
+    backdrop-filter: blur(6px);
+    background-color: rgb(6 6 6 / 42%);
+}
+
+main.engine > div.engine__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+        /* === CLASSES GRID === */
+
+main.engine > div.engine__container > div.classes {
+    display: grid;
+    justify-content: center;
+    align-content: flex-start;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+}
+
+main.engine > div.engine__container > div.classes > a.class {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 150px;
+    width: 300px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 1.3em;
+    background-color: var(--header-background-color);
+    color: var(--header-color);
+}
+
+main.engine > div.engine__container > div.classes > a.class:hover {
+    background-color: #28313e;
+}
+
+main.engine > div.engine__container > div.classes > a.class > div.class__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+main.engine > div.engine__container > div.classes > a.class > div.class__details > span.class__details--title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.3em;
+    width: min-content;
+    max-width: 100%;
+}
+
+main.engine > div.engine__container > div.classes > a.class > div.class__details > span.class__details--section {
+    margin-top: 1em;
+}
+
+main.engine > div.engine__container > div.classes > a.class > div.class__students {
+    position: absolute;
+    right: 1.3em;
+    bottom: 1.3em;
+    height: 72px;
+    width: 120px;
+    line-height: 74px;
+    letter-spacing: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+main.engine > div.engine__container > div.classes > .class > div.class__students > svg {
+    position: absolute;
+    right: -7px;
+    bottom: -2px;
+    z-index: 1;
+    width: 36px;
+}
+
+main.engine > div.engine__container > div.classes > .class > div.class__students.EDNddrdRnO > svg {
+    fill: var(--EDNddrdRnO);
+}
+
+main.engine > div.engine__container > div.classes > .class > div.class__students.dWRAwWrYAr > svg {
+    fill: var(--dWRAwWrYAr);
+}
+
+main.engine > div.engine__container > div.classes > .class > div.class__students.RaDdAAzLAz > svg {
+    fill: var(--RaDdAAzLAz);
+}
+
+main.engine > div.engine__container > div.classes > .class > div.class__students.cIiLIECLii > svg {
+    fill: var(--cIiLIECLii);
+}
+
+main.engine > div.engine__container > div.classes > .class > div.class__students.uAHNELuHnp > svg {
+    fill: var(--uAHNELuHnp);
+}
+
+main.engine > div.engine__container > div.classes > .class > div.class__students.duEZEURZrr > svg {
+    fill: var(--duEZEURZrr);
+}
+
+main.engine > div.engine__container > div.classes > .class > div.class__students.cPfPABCPLb > svg {
+    fill: var(--cPfPABCPLb);
+}
+
+main.engine > div.engine__container > div.classes > .class > div.class__students.oUFoGUErUe > svg {
+    fill: var(--oUFoGUErUe);
+}
+
+main.engine > div.engine__container > div.classes > .class > div.class__students.u1458OOL1w > svg {
+    fill: var(--u1458OOL1w);
+}
+
+main.engine > div.engine__container > div.classes > .class > div.class__students.UfVL6sSUuF > svg {
+    fill: var(--UfVL6sSUuF);
+}
+
+main.engine > div.engine__container > div.classes > a.class > div.class__students > svg > path:first-child {
+    fill: var(--header-background-color);
+}
+
+main.engine > div.engine__container > div.classes > a.class:hover > div.class__students > svg > path:first-child {
+    fill: #28313e;
+}
+
+main.engine > div.engine__container > div.classes > a.class > div.class__students > span.class__students--quantity {
+	display: flex;
+    justify-content: flex-end;
+    padding-right: 0.1em;
+    width: 100%;
+    font-size: 6em;
+    font-weight: 900;
+}
+
+main.engine > div.engine__container > div.classes > div.createClass,
+main.engine > div.engine__container > div.classes > div.joinClass {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px dashed var(--body-color);
+}
+
+main.engine > div.engine__container > div.classes > div.createClass > svg,
+main.engine > div.engine__container > div.classes > div.joinClass > svg {
+    fill: var(--body-color);
+    width: 50px;
+    margin-bottom: 0.5em;
+}
+
+main.engine > div.engine__container > div.classes > div.createClass > span,
+main.engine > div.engine__container > div.classes > div.joinClass > span {
+    font-weight: 500;
+    font-size: 1.3em;
+    color: var(--body-color);
+}
+
+        /* /// CLASSES GRID END \\\ */
+
+        /* === CREATE CLASS === */
+
+main.engine > div.engine__container > div.creatingClass,
+main.engine > div.engine__container > div.joiningClass {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 400px;
+    border-radius: 10px;
+    background-color: var(--header-background-color);
+    opacity: 0;
+    z-index: -1;
+}
+
+main.engine > div.engine__container > div.creatingClass.show,
+main.engine > div.engine__container > div.joiningClass.show {
+    opacity: 1;
+    z-index: 999;
+}
+
+main.engine > div.engine__container > div.creatingClass > div.creatingClass__form,
+main.engine > div.engine__container > div.joiningClass > div.joiningClass__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+}
+
+main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form,
+main.engine > div.engine__container > div.joiningClass > div.joiningClass__form > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    color: var(--header-color);
+	gap: 2em;
+}
+
+/* main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form
+> div.input_field,
+main.engine > div.engine__container > div.joiningClass > div.joiningClass__form > form
+> div.input_field */
+div.input_field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form
+> div.input_field > label.field__label,
+main.engine > div.engine__container > div.joiningClass > div.joiningClass__form > form
+> div.input_field > label.field__label  */
+div.input_field > label.field__label {
+    position: absolute;
+    top: 50%;
+    left: 27px;
+    transform: translateY(-50%);
+    transform-origin: top left;
+    pointer-events: none;
+    opacity: 1;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form
+> div.input_field > input:focus + label.field__label,
+main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form
+> div.input_field > input.input--nonEmpty + label.field__label,
+main.engine > div.engine__container > div.joiningClass > div.joiningClass__form > form
+> div.input_field > input:focus + label.field__label,
+main.engine > div.engine__container > div.joiningClass > div.joiningClass__form > form
+> div.input_field > input.input--nonEmpty + label.field__label  */
+div.input_field > input:focus + label.field__label,
+div.input_field > input.input--nonEmpty + label.field__label {
+    opacity: 0;
+    transform: scale(0.75);
+}
+
+/* main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form
+> div.input_field > span.field__placeholder,
+main.engine > div.engine__container > div.joiningClass > div.joiningClass__form > form
+> div.input_field > span.field__placeholder */
+div.input_field > span.field__placeholder {
+    position: absolute;
+    top: 0.7em;
+    left: 20px;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.75);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form
+> div.input_field > input:focus ~ span.field__placeholder,
+main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form
+> div.input_field > input.input--nonEmpty ~ span.field__placeholder,
+main.engine > div.engine__container > div.joiningClass > div.joiningClass__form > form
+> div.input_field > input:focus ~ span.field__placeholder,
+main.engine > div.engine__container > div.joiningClass > div.joiningClass__form > form
+> div.input_field > input.input--nonEmpty ~ span.field__placeholder */
+div.input_field > input:focus ~ span.field__placeholder,
+div.input_field > input.input--nonEmpty ~ span.field__placeholder {
+    opacity: 1;
+    transform: scale(1);
+}
+
+main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form > div.select_field {
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    height: 62px;
+    width: 100%;
+    padding: 25px 20px 15px;
+    border-radius: 10px;
+    background-color: var(--body-background-color);
+}
+
+main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form > div.select_field > div.select__input--container {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 70%;
+}
+
+main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form > div.select_field > div.select__input--container > 
+.element {
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+	cursor: pointer;
+    outline: 2px solid transparent;
+	transition: outline 0.2s;
+}
+
+main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form > div.select_field > div.select__input--container > 
+.element.active {
+    outline: 2px solid var(--header-color);
+    outline-offset: 2px;
+	cursor: auto;
+}
+
+main.engine > div.engine__container > div.creatingClass > div.creatingClass__form > form > div.select_field > label.field__label {
+    position: absolute;
+    top: 0.7em;
+    pointer-events: none;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+        /* /// CREATE CLASS END \\\ */
+
+		/* === CLASS DETAILS === */
+
+main.classDetails {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	height: calc(100% - 70px);
+	padding: 2em;
+}
+
+main.classDetails > .delStudent,
+main.classDetails > .sendNotiForm,
+main.classDetails > .cantSendNoti,
+main.classDetails > .delClass,
+main.classDetails > .exitClass {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	padding: 2em;
+	width: 30%;
+	border-radius: 10px;
+	background-color: var(--body-color);
+	z-index: 999;
+}
+
+main.classDetails > .delStudent > .delStudent__container,
+main.classDetails > .sendNotiForm > .sendNotiForm__container,
+main.classDetails > .cantSendNoti > .cantSendNoti__container,
+main.classDetails > .delClass > .delClass__container,
+main.classDetails > .exitClass > .exitClass__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	color: var(--header-color);
+	gap: 2em;
+}
+
+main.classDetails > .delStudent > .delStudent__container > .delStudent__container--title,
+main.classDetails > .sendNotiForm > .sendNotiForm__container > .sendNotiForm__container--title,
+main.classDetails > .cantSendNoti > .cantSendNoti__container > .cantSendNoti__container--title,
+main.classDetails > .delClass > .delClass__container > .delClass__container--title,
+main.classDetails > .exitClass > .exitClass__container > .exitClass__container--title {
+	font-size: 1.5em;
+	font-weight: 900;
+}
+
+main.classDetails > .delStudent > .delStudent__container > .delStudent__container--context,
+main.classDetails > .sendNotiForm > .sendNotiForm__container > .sendNotiForm__container--context,
+main.classDetails > .cantSendNoti > .cantSendNoti__container > .cantSendNoti__container--context,
+main.classDetails > .delClass > .delClass__container > .delClass__container--context,
+main.classDetails > .exitClass > .exitClass__container > .exitClass__container--context  {
+	font-size: .8em;
+	opacity: .7;
+	text-align: center;
+}
+
+main.classDetails > .sendNotiForm > .sendNotiForm__container > #sendNotiForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	gap: 2em;
+}
+
+main.classDetails > .sendNotiForm > .sendNotiForm__container > #sendNotiForm > input {
+	padding: 1em;
+	width: 60%;
+}
+
+main.classDetails > .delStudent > .delStudent__container > .delStudent__container--buttons,
+main.classDetails > .sendNotiForm > .sendNotiForm__container > #sendNotiForm > .sendNotiForm__container--buttons,
+main.classDetails > .cantSendNoti > .cantSendNoti__container > .cantSendNoti__container--buttons,
+main.classDetails > .delClass > .delClass__container > .delClass__container--buttons,
+main.classDetails > .exitClass > .exitClass__container > .exitClass__container--buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	gap: 1em;
+}
+
+main.classDetails > .delStudent > .delStudent__container > .delStudent__container--buttons > .delStudent__buttons,
+main.classDetails > .sendNotiForm > .sendNotiForm__container > #sendNotiForm > .sendNotiForm__container--buttons > .sendNotiForm__buttons,
+main.classDetails > .cantSendNoti > .cantSendNoti__container > .cantSendNoti__container--buttons > .cantSendNoti__buttons,
+main.classDetails > .delClass > .delClass__container > .delClass__container--buttons > .delClass__buttons,
+main.classDetails > .exitClass > .exitClass__container > .exitClass__container--buttons > .exitClass__buttons {
+	padding: 1em;
+	border: unset;
+	font-size: 1em;
+	font-weight: 900;
+	letter-spacing: 1px;
+	border-radius: 10px;
+	background-color: var(--body-background-color);
+	cursor: pointer;
+	opacity: .5;
+	transition: opacity .2s;
+}
+
+main.classDetails > .delStudent > .delStudent__container > .delStudent__container--buttons > .delStudent__buttons.cancel,
+main.classDetails > .sendNotiForm > .sendNotiForm__container > #sendNotiForm > .sendNotiForm__container--buttons > .sendNotiForm__buttons.cancel,
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--centralInfo > .classDetails__bottom
+> .classDetails__bottom--button.del,
+main.classDetails > .delClass > .delClass__container > .delClass__container--buttons > .delClass__buttons.cancel,
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--centralInfo > .classDetails__bottom
+> .classDetails__bottom--button.exit,
+main.classDetails > .exitClass > .exitClass__container > .exitClass__container--buttons > .exitClass__buttons.cancel {
+	color: #ff2f20;
+	border: 2px solid #ff2f20;
+}
+
+main.classDetails > .delStudent > .delStudent__container > .delStudent__container--buttons > .delStudent__buttons.accept,
+main.classDetails > .sendNotiForm > .sendNotiForm__container > #sendNotiForm > .sendNotiForm__container--buttons > .sendNotiForm__buttons.accept,
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--centralInfo > .classDetails__bottom
+> .classDetails__bottom--button.send,
+main.classDetails > .cantSendNoti > .cantSendNoti__container > .cantSendNoti__container--buttons > .cantSendNoti__buttons.accept,
+main.classDetails > .delClass > .delClass__container > .delClass__container--buttons > .delClass__buttons.accept,
+main.classDetails > .exitClass > .exitClass__container > .exitClass__container--buttons > .exitClass__buttons.accept {
+	color: var(--primary-color);
+	border: 2px solid var(--primary-color);
+}
+
+main.classDetails > .delStudent > .delStudent__container > .delStudent__container--buttons > .delStudent__buttons:hover,
+main.classDetails > .sendNotiForm > .sendNotiForm__container > #sendNotiForm > .sendNotiForm__container--buttons > .sendNotiForm__buttons:hover,
+main.classDetails > .cantSendNoti > .cantSendNoti__container > .cantSendNoti__container--buttons > .cantSendNoti__buttons.accept:hover,
+main.classDetails > .delClass > .delClass__container > .delClass__container--buttons > .delClass__buttons:hover,
+main.classDetails > .exitClass > .exitClass__container > .exitClass__container--buttons > .exitClass__buttons:hover {
+	opacity: 1;
+}
+
+main.classDetails > .classDetails__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	width: 100%;
+	height: 25%;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	height: 100%;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__name {
+	font-size: 2em;
+	font-weight: 900;
+	color: var(--header-color);
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__tests {
+	color: var(--header-color);
+	font-size: 1.1em;
+	font-weight: 900;
+	text-transform: uppercase;
+	opacity: .4;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__teacher {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__teacher > .leftInfo__teacher--title {
+	font-size: 1.2em;
+	color: var(--header-color);
+	opacity: .3;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__teacher > .leftInfo__teacher--content {
+	font-size: 1.7em;
+	font-weight: 500;
+	color: var(--header-color);
+	opacity: .8;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container {
+	display: flex;
+    align-items: center;
+    position: relative;
+    padding: .3em 1.5em .3em 1em;
+    height: 30%;
+    border-radius: 10px;
+    color: var(--header-color);
+    background-color: var(--body-color);
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > span {
+	font-weight: 400;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > .code__container {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 0.5em;
+    margin-left: 1em;
+    margin-right: 1.5em;
+	height: 100%;
+    border-radius: 5px;
+    background-color: var(--body-background-color);
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > .code__container > code,
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > .code__container > .code__container--classID {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	opacity: 0;
+	z-index: -1;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > .code__container > .code__container--classID {
+	position: absolute;
+	cursor: pointer;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > .code__container > code.active,
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > .code__container > .code__container--classID.active {
+	opacity: 1;
+	z-index: 1;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > .code__show,
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > .code__unshow {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    cursor: pointer;
+    fill: var(--header-color);
+    opacity: 0;
+    z-index: -1;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > .code__show.active,
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > .code__unshow.active {
+	opacity: 1;
+	z-index: 1;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > .code__show > svg,
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--leftInfo
+> .leftInfo__code--container > .code__unshow > svg {
+	width: 35%;
+    height: 100%;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--centralInfo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+	position: absolute;
+	width: 100%;
+    height: 100%;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--centralInfo > .classDetails__bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	gap: 1em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--centralInfo > .classDetails__bottom
+> .classDetails__bottom--button {
+	padding: 1em;
+	font-size: .8em;
+	font-weight: 900;
+	letter-spacing: 1px;
+	border: unset;
+	border-radius: 10px;
+	background-color: var(--body-color);
+	cursor: pointer;
+	opacity: .5;
+    transition: opacity .2s;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--centralInfo > .classDetails__bottom
+> .classDetails__bottom--button:hover {
+	opacity: 1;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--rightInfo {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-between;
+	height: 100%;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--rightInfo > .rightInfo__section {
+	color: var(--header-color);
+	font-size: 1.5em;
+	font-weight: 900;
+	text-transform: uppercase;
+	opacity: .4;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--rightInfo > .rightInfo__students {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	height: 60%;
+	overflow: hidden;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--rightInfo > .rightInfo__students
+> .rightInfo__students--quantity {
+	display: flex;
+    justify-content: flex-end;
+    padding-right: .1em;
+    font-size: 6em;
+    font-weight: 900;
+	color: var(--header-color);
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--rightInfo > .rightInfo__students
+> svg {
+	position: absolute;
+    right: -7px;
+    bottom: -2px;
+    width: 36px;
+    z-index: 1;
+}
+
+main.classDetails > .classDetails__container > .classDetails__header > .classDetails__header--rightInfo > .rightInfo__students
+> svg > path:first-child {
+	fill: var(--body-background-color);
+}
+
+main.classDetails > .classDetails__container > .classDetails__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2em;
+	padding: .3em;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	color: var(--header-color);
+	background-color: var(--body-color);
+	overflow: hidden;
+}
+
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1em;
+	width: 100%;
+	height: 100%;
+	background-color: #080a0e;
+	border-radius: inherit;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students {
+	display: flex;
+	flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+	gap: 1em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--column.titles {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding-right: 8px;
+	gap: 1em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--column.titles > .content__column--title {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	padding: 1em;
+	border-radius: 10px;
+	background-color: var(--body-color);
+	cursor: pointer;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--column.titles > .content__column--title.actions {
+	cursor: auto;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields {
+	display: flex;
+	flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	gap: 1em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	max-height: 100%;
+	gap: 1em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	gap: 1em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field {
+	display: flex;
+	justify-content: space-between;
+	padding: 1.03em;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #1f26305e;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field > svg {
+	max-height: 19px;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field > svg.valid {
+	color: var(--primary-color);
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field > svg.invalid {
+	color: var(--alertError-color);
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.actions {
+	display: flex;
+    justify-content: space-around;
+	position: relative;
+    padding: 0 1em;
+    width: 100%;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.actions > .content__field--buttons {
+	display: flex;
+	justify-content: space-around;
+    padding: 0 1em;
+	width: 100%;
+	opacity: 0;
+	z-index: -1;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.actions > .content__field--buttons:not(:first-child) {
+	position: absolute;
+	top: 0;
+	left: 0;
+    padding: 0 2em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.actions > .content__field--buttons.active {
+	opacity: 1;
+	z-index: 1;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.actions > .content__field--buttons
+> .content__button{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.03em;
+    opacity: .5;
+    cursor: pointer;
+    transition: opacity .2s;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.actions > .content__field--buttons
+> .content__button:hover {
+	opacity: 1;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.actions > .content__field--buttons
+> .content__button > svg {
+	width: 19px;
+	aspect-ratio: 1;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.actions > .content__field--buttons
+> .content__button.edit {
+	color: #ffbc40;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.actions > .content__field--buttons
+> .content__button.delete,
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.actions > .content__field--buttons
+> .content__button.cancel {
+	color: #ff2f20;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.actions > .content__field--buttons
+> .content__button.submit {
+	color: var(--primary-color);
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.actions > .content__field--buttons
+> .content__button.disabled {
+	opacity: .2;
+	cursor: not-allowed;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.grade {
+	cursor: pointer;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--row > .content__field.grade:hover {
+    background-color: #28323f75;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details.unshow {
+	display: none;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 0 1.1em;
+	max-width: 95.5%;
+	height: 100%;
+	padding-bottom: 0.6em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	position: relative;
+	height: 100%;
+	max-width: 100%;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--button {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 20%;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--button.unshow {
+	display: none;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--button.prev {
+	left: 0;
+    transform: translateX(-100%);
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--button.next {
+	right: 0;
+    transform: translateX(100%);
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--button
+> svg {
+	height: 65%;
+	color: #1f26305e;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--select {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	height: 100%;
+	border-right: 2px solid var(--body-color);
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--select
+> .student__select--option {
+	position: relative;
+	padding: 1em;
+	width: 100%;
+	background-color: #00000000;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--select
+> .student__select--option:hover {
+	background-color: #3030305e;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--select
+> .student__select--option:not(:first-child)::before {
+	display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--body-color);
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--selected {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	height: 100%;
+	width: 100%;
+	border-radius: 5px;
+	overflow-x: hidden;
+	gap: 1em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--selected
+> form {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 100%;
+	width: 100%;
+	gap: 1em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--selected .student__selected--container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 2em;
+	height: 100%;
+	border-radius: 5px;
+	background-color: #1f26305e;
+	gap: 3em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--selected
+.student__selected--container > .student__selected--title {
+	display: flex;
+	align-items: flex-start;
+	font-size: 1.5em;
+	font-weight: 900;
+	gap: .2em;
+	white-space: nowrap;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--selected
+.student__selected--container > .student__selected--title > svg {
+	width: 15px;
+	aspect-ratio: 1;
+	opacity: .5;
+	transition: opacity .2s;
+	cursor: pointer;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--selected
+.student__selected--container > .student__selected--title > svg:hover {
+	opacity: 1;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--selected
+.student__selected--container > .student__selected--grade {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--selected
+.student__selected--container > .student__selected--grade > span:first-child {
+	margin-right: 1em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--selected
+.student__selected--container > .student__selected--grade > span:last-child {
+    padding: .5em 1em;
+    width: 6em;
+    border: 2px solid #0000;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: var(--login-input-background-color);
+    color: var(--login-input-color);
+    transition: all .2s;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students > 
+.content__container--fields > .content__fields--student > .content__student--details > .student__details--grades > .student__grades--selected
+.student__selected--container > .student__selected--grade > input {
+	padding: .5em 1em;
+	width: 6em;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students >
+.empty__list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+main.classDetails > .classDetails__container > .classDetails__content > .classDetails__content--container > .content__container--students >
+.empty__list > span {
+	font-size: 1.5em;
+	font-weight: 900;
+	opacity: .3;
+}
+
+		/* /// CLASS DETAILS END \\\ */
+
+
+/* /// TEACHER UI END \\\ */
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 70px;
+	color: var(--header-color);
+	background-color: var(--header-background-color);
+}
